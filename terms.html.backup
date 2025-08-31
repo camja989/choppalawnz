@@ -1,0 +1,318 @@
+<!DOC    <title>Terms & Conditions - Choppalawnz Wellington</title>
+    <link rel="icon" type="image/png" href="img/flavicon.png">
+    <link rel="shortcut icon" href="img/flavicon.png">
+    <link rel="apple-touch-icon" href="img/flavicon.png">
+    <link rel="stylesheet" href="css/styles.css">PE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - Choppalawnz Wellington</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="img/updated logo.png" alt="Choppalawnz - Wellington Lawn Care" />
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="prices.html" class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calculator.html" class="nav-link">Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="careers.html" class="nav-link">Careers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html#contact-form" class="nav-link cta-button">Free Quote</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 40vh; padding: 120px 0 60px;">
+        <div class="container">
+            <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1 class="hero-title" style="font-size: 2.5rem;">Terms and Conditions</h1>
+                <p class="hero-subtitle">Understanding our service terms, free trial offer, and your rights as a Choppalawnz customer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section style="padding: 60px 0;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                
+                <!-- Free Trial Promotion -->
+                <div style="background: var(--hero-gradient); padding: 2rem; border-radius: 1rem; margin-bottom: 3rem; border: 2px solid var(--primary-color);">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                        <i class="fas fa-gift"></i> Free Trial Promotion Terms
+                    </h2>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Eligibility Requirements</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.75rem; display: flex; align-items: flex-start;">
+                                <i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 0.5rem; margin-top: 0.25rem;"></i>
+                                <span><strong>Ongoing Service Commitment:</strong> Free trial is only available to customers who sign up for ongoing lawn mowing services (minimum 3 months commitment).</span>
+                            </li>
+                            <li style="margin-bottom: 0.75rem; display: flex; align-items: flex-start;">
+                                <i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 0.5rem; margin-top: 0.25rem;"></i>
+                                <span><strong>New Customers Only:</strong> Offer applies to first-time Choppalawnz customers only. One free trial per property address.</span>
+                            </li>
+                            <li style="margin-bottom: 0.75rem; display: flex; align-items: flex-start;">
+                                <i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 0.5rem; margin-top: 0.25rem;"></i>
+                                <span><strong>Service Area:</strong> Property must be within our standard Wellington service area.</span>
+                            </li>
+                            <li style="margin-bottom: 0.75rem; display: flex; align-items: flex-start;">
+                                <i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 0.5rem; margin-top: 0.25rem;"></i>
+                                <span><strong>Lawn Size Limit:</strong> Free trial applies to lawns up to 500m². Larger lawns may receive a partial discount.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #fff3f8; padding: 1.5rem; border-radius: 0.5rem; border-left: 4px solid var(--primary-color);">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+                            <i class="fas fa-exclamation-triangle"></i> Important Notice
+                        </h3>
+                        <p style="margin-bottom: 1rem; font-weight: 600;">
+                            If you do not continue with ongoing service after your free trial, you may be charged the full price of a one-off mow.
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 0.5rem;">• One-off mow pricing applies: from $45 minimum charge</li>
+                            <li style="margin-bottom: 0.5rem;">• Travel costs and additional services (clipping removal) are charged separately</li>
+                            <li style="margin-bottom: 0.5rem;">• You will be notified before any charges are applied</li>
+                            <li>• Payment is due within 7 days of service completion</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- General Terms -->
+                <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); margin-bottom: 2rem;">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">1. Service Agreement</h2>
+                    
+                    <h3 style="color: var(--dark-gray); margin-bottom: 1rem;">1.1 Service Provision</h3>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">
+                        Choppalawnz ("we", "us", "our") provides lawn mowing and garden maintenance services to residential and commercial properties in the Wellington region. By booking our services, you ("customer", "you", "your") agree to these terms and conditions.
+                    </p>
+
+                    <h3 style="color: var(--dark-gray); margin-bottom: 1rem;">1.2 Booking and Scheduling</h3>
+                    <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">Services are scheduled based on availability and weather conditions</li>
+                        <li style="margin-bottom: 0.5rem;">We will provide 24-48 hours notice of scheduled service visits</li>
+                        <li style="margin-bottom: 0.5rem;">Cancellations must be made at least 24 hours in advance</li>
+                        <li style="margin-bottom: 0.5rem;">Weather-related postponements will be rescheduled at no extra cost</li>
+                    </ul>
+
+                    <h3 style="color: var(--dark-gray); margin-bottom: 1rem;">1.3 Access and Property Preparation</h3>
+                    <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">Customer must provide clear access to all areas requiring service</li>
+                        <li style="margin-bottom: 0.5rem;">Remove obstacles such as toys, garden furniture, and pet waste before our arrival</li>
+                        <li style="margin-bottom: 0.5rem;">Ensure gates are unlocked or provide access codes</li>
+                        <li style="margin-bottom: 0.5rem;">Mark or remove any fragile plants or decorations</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); margin-bottom: 2rem;">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">2. Pricing and Payment</h2>
+                    
+                    <h3 style="color: var(--dark-gray); margin-bottom: 1rem;">2.1 Pricing Structure</h3>
+                    <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">Lawn mowing: $0.08 per square meter (minimum $45 charge)</li>
+                        <li style="margin-bottom: 0.5rem;">Travel costs: IRD rates apply for Karori ($0.83/km return trip)</li>
+                        <li style="margin-bottom: 0.5rem;">Other Wellington suburbs: $20 flat travel fee</li>
+                        <li style="margin-bottom: 0.5rem;">Clipping removal: $20 first mow, $10 ongoing service</li>
+                        <li style="margin-bottom: 0.5rem;">All prices are GST-exempt as we are not GST registered</li>
+                    </ul>
+
+                    <h3 style="color: var(--dark-gray); margin-bottom: 1rem;">2.2 Payment Terms</h3>
+                    <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">Payment is due within 7 days of service completion</li>
+                        <li style="margin-bottom: 0.5rem;">Invoices will be sent via email with payment instructions</li>
+                        <li style="margin-bottom: 0.5rem;">Late payment fees of $25 apply after 14 days</li>
+                        <li style="margin-bottom: 0.5rem;">Services may be suspended for overdue accounts</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); margin-bottom: 2rem;">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">3. Service Standards and Guarantees</h2>
+                    
+                    <h3 style="color: var(--dark-gray); margin-bottom: 1rem;">3.1 Quality Guarantee</h3>
+                    <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">We guarantee professional quality lawn mowing and edging</li>
+                        <li style="margin-bottom: 0.5rem;">Any quality issues must be reported within 24 hours</li>
+                        <li style="margin-bottom: 0.5rem;">We will return to rectify any genuine quality concerns at no charge</li>
+                        <li style="margin-bottom: 0.5rem;">Customer satisfaction is our priority</li>
+                    </ul>
+
+                    <h3 style="color: var(--dark-gray); margin-bottom: 1rem;">3.2 Limitations</h3>
+                    <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">We are not responsible for damage to unmarked sprinkler systems</li>
+                        <li style="margin-bottom: 0.5rem;">Customer must mark any hidden obstacles or hazards</li>
+                        <li style="margin-bottom: 0.5rem;">We reserve the right to refuse service on unsafe or inaccessible properties</li>
+                        <li style="margin-bottom: 0.5rem;">Weather conditions may affect service quality and timing</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); margin-bottom: 2rem;">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">4. Insurance and Liability</h2>
+                    
+                    <h3 style="color: var(--dark-gray); margin-bottom: 1rem;">4.1 Our Insurance Coverage</h3>
+                    <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">We carry comprehensive public liability insurance</li>
+                        <li style="margin-bottom: 0.5rem;">All equipment is covered under our business insurance</li>
+                        <li style="margin-bottom: 0.5rem;">Staff are covered by ACC while working on your property</li>
+                        <li style="margin-bottom: 0.5rem;">Insurance certificates available upon request</li>
+                    </ul>
+
+                    <h3 style="color: var(--dark-gray); margin-bottom: 1rem;">4.2 Liability Limitations</h3>
+                    <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">Our liability is limited to the cost of the service provided</li>
+                        <li style="margin-bottom: 0.5rem;">We are not liable for damage to unmarked or concealed items</li>
+                        <li style="margin-bottom: 0.5rem;">Customer must report any damage within 24 hours</li>
+                        <li style="margin-bottom: 0.5rem;">Claims must be submitted in writing with supporting evidence</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); margin-bottom: 2rem;">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">5. Cancellation and Refunds</h2>
+                    
+                    <h3 style="color: var(--dark-gray); margin-bottom: 1rem;">5.1 Service Cancellation</h3>
+                    <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">Individual services can be cancelled with 24 hours notice</li>
+                        <li style="margin-bottom: 0.5rem;">Ongoing service agreements require 7 days written notice</li>
+                        <li style="margin-bottom: 0.5rem;">No cancellation fees apply for weather-related postponements</li>
+                        <li style="margin-bottom: 0.5rem;">Emergency cancellations will be accommodated where possible</li>
+                    </ul>
+
+                    <h3 style="color: var(--dark-gray); margin-bottom: 1rem;">5.2 Refund Policy</h3>
+                    <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">Refunds are available for services not performed as agreed</li>
+                        <li style="margin-bottom: 0.5rem;">Quality concerns will be addressed by re-service or partial refund</li>
+                        <li style="margin-bottom: 0.5rem;">Refund requests must be made within 7 days of service</li>
+                        <li style="margin-bottom: 0.5rem;">Processing time for approved refunds is 5-10 business days</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); margin-bottom: 2rem;">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">6. Privacy and Data Protection</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">
+                        We respect your privacy and handle all personal information in accordance with the Privacy Act 2020. Customer information is used only for service delivery, invoicing, and communication purposes. We do not share customer information with third parties except as required by law.
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); margin-bottom: 2rem;">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">7. Dispute Resolution</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.6;">
+                        We are committed to resolving any disputes promptly and fairly. If you have a concern, please contact us immediately at <a href="mailto:choppalawnz@gmail.com" style="color: var(--primary-color);">choppalawnz@gmail.com</a> or 0273155560. If we cannot resolve the matter directly, disputes may be referred to the Disputes Tribunal or relevant industry mediation service.
+                    </p>
+                </div>
+
+                <div style="background: var(--light-gray); padding: 2rem; border-radius: 1rem; text-align: center;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Questions About Our Terms?</h3>
+                    <p style="margin-bottom: 1.5rem;">We're here to help clarify any aspect of our service terms and conditions.</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn btn-primary">
+                            <i class="fas fa-phone"></i>
+                            Contact Us
+                        </a>
+                        <a href="mailto:choppalawnz@gmail.com" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Email Questions
+                        </a>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 1rem; border-top: 1px solid rgba(255, 107, 157, 0.2); text-align: center; color: var(--medium-gray); font-size: 0.9rem;">
+                    <p>Last updated: August 2024</p>
+                    <p>These terms and conditions are governed by New Zealand law.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Choppalawnz</h3>
+                    <p>Wellington's premium lawn care service, designed for modern lifestyles.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61578180530542" target="_blank" aria-label="Follow Choppalawnz on Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/choppalawnz/" target="_blank" aria-label="Follow Choppalawnz on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@choppalawnz?_t=ZS-8z37O24GDea&_r=1" target="_blank" aria-label="Follow Choppalawnz on TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Lawn Mowing</a></li>
+                        <li><a href="services.html">Edge Trimming</a></li>
+                        <li><a href="services.html">Clipping Removal</a></li>
+                        <li><a href="calculator.html">Price Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 0273155560</li>
+                        <li><i class="fas fa-envelope"></i> choppalawnz@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Wellington, New Zealand</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Choppalawnz. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
