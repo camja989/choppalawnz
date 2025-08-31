@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawn Mowing Price Calculator - Choppalawnz Wellington</title>
+    <link rel="icon" type="image/png" href="img/flavicon.png">
+    <link rel="shortcut icon" href="img/flavicon.png">
+    <link rel="apple-touch-icon" href="img/flavicon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="img/updated logo.png" alt="Choppalawnz - Wellington Lawn Care" />
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="prices.html" class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calculator.html" class="nav-link active">Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="careers.html" class="nav-link">Careers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html#contact-form" class="nav-link cta-button">Free Quote</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh; padding: 120px 0 60px;">
+        <div class="container">
+            <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1 class="hero-title" style="font-size: 2.5rem;">Instant Price Calculator</h1>
+                <p class="hero-subtitle">Get an accurate estimate for your lawn mowing service in Wellington. Our calculator includes travel costs and optional services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section style="padding: 60px 0;">
+        <div class="container">
+            <div class="calculator-container">
+                <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">
+                    <i class="fas fa-calculator"></i> Calculate Your Lawn Mowing Cost
+                </h2>
+                
+                <form id="calculatorForm" style="max-width: 600px; margin: 0 auto;">
+                    <div class="form-group">
+                        <label for="squareMeters" class="form-label">
+                            <i class="fas fa-ruler-combined"></i> Lawn Size (Square Meters) *
+                        </label>
+                        <input type="number" 
+                               id="squareMeters" 
+                               class="form-input" 
+                               placeholder="e.g., 200" 
+                               min="1" 
+                               step="1" 
+                               required>
+                        <small style="color: var(--medium-gray); margin-top: 0.25rem; display: block;">
+                            💡 Not sure of your lawn size? A typical suburban lawn is 150-300m²
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address" class="form-label">
+                            <i class="fas fa-map-marker-alt"></i> Your Address (Optional)
+                        </label>
+                        <input type="text" 
+                               id="address" 
+                               class="form-input" 
+                               placeholder="e.g., Karori, Wellington">
+                        <small style="color: var(--medium-gray); margin-top: 0.25rem; display: block;">
+                            Helps us calculate accurate travel costs. IRD rates apply for Karori travel.
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-broom"></i> Additional Services
+                        </label>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="clippingsRemoval">
+                            <label for="clippingsRemoval">
+                                <strong>Clippings Removal</strong>
+                                <br><small style="color: var(--medium-gray);">$20 for first mow, $10 for ongoing service</small>
+                            </label>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="firstMow">
+                            <label for="firstMow">
+                                <strong>This is a first-time mow</strong>
+                                <br><small style="color: var(--medium-gray);">First mows typically have more grass to remove</small>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin: 2rem 0;">
+                        <button type="button" 
+                                onclick="calculateLawnPrice()" 
+                                class="btn btn-primary btn-large">
+                            <i class="fas fa-calculator"></i>
+                            Calculate Price
+                        </button>
+                    </div>
+                </form>
+
+                <div id="calculatorResult" class="calculator-result" style="display: none;">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+
+                <div style="background: var(--hero-gradient); padding: 2rem; border-radius: 1rem; margin-top: 2rem; text-align: center;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+                        <i class="fas fa-gift"></i> Special Offer!
+                    </h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                        <strong>Get your FIRST MOW FREE</strong> when you sign up for ongoing lawn care service!
+                    </p>
+                    <a href="contact.html#contact-form" 
+                       class="btn btn-primary btn-large">
+                        <i class="fas fa-leaf"></i>
+                        Claim Free Trial
+                    </a>
+                    <br>
+                    <small style="color: var(--medium-gray); margin-top: 1rem; display: block;">
+                        *<a href="terms.html" style="color: var(--primary-color);">Terms and conditions apply</a>. 
+                        Free trial for ongoing service customers only.
+                    </small>
+                </div>
+            </div>
+
+            <!-- Pricing Information -->
+            <div style="margin-top: 3rem;">
+                <h2 class="section-title">Wellington Lawn Mowing Rates</h2>
+                <div class="features-grid" style="max-width: 900px; margin: 0 auto;">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Small Lawns</h3>
+                        <p><strong>Under 150m²</strong><br>
+                        From $45 minimum charge<br>
+                        Perfect for townhouses and small sections</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h3>Medium Lawns</h3>
+                        <p><strong>150-400m²</strong><br>
+                        $0.08 per m² + travel<br>
+                        Ideal for suburban family homes</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3>Large Lawns</h3>
+                        <p><strong>400m²+</strong><br>
+                        $0.08 per m² + travel<br>
+                        Great value for larger properties</p>
+                    </div>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 1rem; margin-top: 2rem; border: 1px solid rgba(255, 107, 157, 0.1);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                        <i class="fas fa-info-circle"></i> How Our Pricing Works
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                        <div>
+                            <h4 style="color: var(--dark-gray); margin-bottom: 0.5rem;">
+                                <i class="fas fa-cut" style="color: var(--primary-color);"></i> Base Mowing
+                            </h4>
+                            <p>$0.08 per square meter with a minimum charge of $45. This includes mowing, basic edging, and blowing paths clean.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--dark-gray); margin-bottom: 0.5rem;">
+                                <i class="fas fa-car" style="color: var(--primary-color);"></i> Travel Costs
+                            </h4>
+                            <p>IRD rates of $0.83 per km for return trips to Karori. Other Wellington suburbs have a flat $20 travel fee.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--dark-gray); margin-bottom: 0.5rem;">
+                                <i class="fas fa-recycle" style="color: var(--primary-color);"></i> Clippings
+                            </h4>
+                            <p>Optional removal service: $20 for first/overgrown lawns, $10 for regular maintenance customers.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--dark-gray); margin-bottom: 0.5rem;">
+                                <i class="fas fa-receipt" style="color: var(--primary-color);"></i> Invoicing
+                            </h4>
+                            <p>We provide detailed invoices for all services rendered. Simple, transparent pricing with no hidden fees.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Section -->
+    <section style="padding: 40px 0; background: var(--light-gray);">
+        <div class="container" style="text-align: center;">
+            <div style="display: inline-block; border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-lg);">
+                <img src="img/IMG_5287.jpeg" 
+                     alt="Professional lawn mowing results Wellington - before and after"
+                     style="width: 100%; max-width: 500px; height: 300px; object-fit: cover;">
+            </div>
+            <p style="margin-top: 1rem; color: var(--medium-gray); font-style: italic;">
+                Professional results you can count on
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-content">
+                <h2>Ready to Book Your Service?</h2>
+                <p>Get a detailed quote with exact pricing and schedule your lawn mowing service today.</p>
+                <div class="quote-buttons">
+                    <a href="contact.html#contact-form" class="btn btn-primary btn-large">
+                        <i class="fas fa-calendar-check"></i>
+                        Get Detailed Quote
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Choppalawnz</h3>
+                    <p>Wellington's premium lawn care service, designed for modern lifestyles.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61578180530542" target="_blank" aria-label="Follow Choppalawnz on Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/choppalawnz/" target="_blank" aria-label="Follow Choppalawnz on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@choppalawnz?_t=ZS-8z37O24GDea&_r=1" target="_blank" aria-label="Follow Choppalawnz on TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Lawn Mowing</a></li>
+                        <li><a href="services.html">Edge Trimming</a></li>
+                        <li><a href="services.html">Clipping Removal</a></li>
+                        <li><a href="calculator.html">Price Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 0273155560</li>
+                        <li><i class="fas fa-envelope"></i> choppalawnz@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Wellington, New Zealand</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Choppalawnz. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
