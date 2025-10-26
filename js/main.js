@@ -1,50 +1,41 @@
-// Mobile Navigation Toggle
+// Mobile and Desktop Navigation Toggle - Full Screen Menu
 const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const navOverlay = document.querySelector('.nav-overlay');
 
-if (hamburger && navMenu) {
+if (hamburger && navOverlay) {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = navOverlay.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Close mobile menu when clicking on a link
+    // Close menu when clicking on a link
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
-}
 
-// Contact Dropdown Toggle (Desktop and Mobile)
-const contactDropdown = document.querySelector('.contact-dropdown');
-const contactDropdownBtn = contactDropdown?.querySelector('button');
-const contactDropdownContent = contactDropdown?.querySelector('.contact-dropdown-content');
-
-if (contactDropdownBtn && contactDropdown) {
-    // Toggle dropdown on button click
-    contactDropdownBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        contactDropdown.classList.toggle('active');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!contactDropdown.contains(e.target)) {
-            contactDropdown.classList.remove('active');
+    // Close menu when clicking outside menu content
+    navOverlay.addEventListener('click', (e) => {
+        if (e.target === navOverlay) {
+            hamburger.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
         }
     });
 
-    // Keep dropdown open when clicking inside it (but allow links to work)
-    if (contactDropdownContent) {
-        contactDropdownContent.addEventListener('click', (e) => {
-            // Don't close dropdown when clicking on content
-            e.stopPropagation();
-            // But allow links to navigate
-        });
-    }
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navOverlay.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 }
 
 // Smooth scrolling for anchor links
