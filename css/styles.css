@@ -464,21 +464,6 @@ body {
     }
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--dark-gray);
-    margin: 3px 0;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-
 /* Hero Section */
 .hero {
     background: var(--hero-gradient);
