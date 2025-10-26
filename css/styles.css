@@ -801,17 +801,26 @@ body {
     .nav-item {
         width: 100%;
         padding: 0.5rem 1rem;
+        display: block;
+        list-style: none;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.75rem 1rem;
     }
 
     .contact-dropdown {
         width: 100%;
+        display: block;
     }
 
     .contact-dropdown button {
         font-size: 0.9rem;
-        padding: 0.6rem 1rem;
+        padding: 0.6rem 1rem !important;
         width: 100%;
         justify-content: center;
+        display: flex !important;
     }
 
     .hamburger {
@@ -832,10 +841,14 @@ body {
 
     /* Ensure buttons are visible and properly styled on mobile */
     .nav-menu .btn {
-        display: flex;
+        display: flex !important;
         width: 100%;
         justify-content: center;
         margin: 0.5rem 0;
+    }
+
+    .nav-menu li:has(.btn) {
+        display: block;
     }
 
     .contact-dropdown-content {
