@@ -20,6 +20,7 @@ if (hamburger && navMenu) {
 // Contact Dropdown Mobile Toggle
 const contactDropdown = document.querySelector('.contact-dropdown');
 const contactDropdownBtn = contactDropdown?.querySelector('button');
+const contactDropdownContent = contactDropdown?.querySelector('.contact-dropdown-content');
 
 if (contactDropdownBtn) {
     contactDropdownBtn.addEventListener('click', (e) => {
@@ -31,12 +32,20 @@ if (contactDropdownBtn) {
     });
 }
 
-// Close dropdown when clicking outside
+// Close dropdown when clicking outside, but not when clicking inside
 document.addEventListener('click', (e) => {
     if (contactDropdown && !contactDropdown.contains(e.target)) {
         contactDropdown.classList.remove('mobile-open');
     }
 });
+
+// Prevent dropdown from closing when clicking on links (for both hover and mobile)
+if (contactDropdownContent) {
+    contactDropdownContent.addEventListener('click', (e) => {
+        // Allow the link to work normally
+        e.stopPropagation();
+    });
+}
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
