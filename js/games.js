@@ -1,15 +1,21 @@
 // Lawn Mowing Game
-const canvas = document.getElementById('mowerGame');
-const ctx = canvas ? canvas.getContext('2d') : null;
-
+let canvas = null;
+let ctx = null;
 let gameRunning = false;
 let timeLeft = 60;
 let mowedCells = new Set();
 let timer = null;
 let bestScore = localStorage.getItem('bestMowerScore') || 0;
 
-// Set canvas size
-if (canvas) {
+const GRID_SIZE = 20; // Size of each mowable cell
+
+// Initialize canvas when available
+function initCanvas() {
+    canvas = document.getElementById('mowerGame');
+    if (!canvas) return false;
+    
+    ctx = canvas.getContext('2d');
+    
     const setCanvasSize = () => {
         const maxWidth = Math.min(600, window.innerWidth - 40);
         canvas.width = maxWidth;
@@ -27,12 +33,25 @@ if (canvas) {
     if (bestScoreElement) {
         bestScoreElement.textContent = bestScore;
     }
+    
+    // Add click handler
+    canvas.addEventListener('click', (e) => {
+        if (!gameRunning) return;
+        
+        const rect = canvas.getBoundingClientRect();
+        const x = Math.floor((e.clientX - rect.left) / GRID_SIZE);
+        const y = Math.floor((e.clientY - rect.top) / GRID_SIZE);
+        
+        mowedCells.add(`${x},${y}`);
+        drawGame();
+        updateStats();
+    });
+    
+    return true;
 }
 
-const GRID_SIZE = 20; // Size of each mowable cell
-
 function drawGame() {
-    if (!ctx) return;
+    if (!ctx || !canvas) return;
     
     // Clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -123,6 +142,7 @@ function resetGame() {
 }
 
 function calculateScore() {
+    if (!canvas) return 0;
     const totalCells = Math.floor(canvas.width / GRID_SIZE) * Math.floor(canvas.height / GRID_SIZE);
     return Math.round((mowedCells.size / totalCells) * 100);
 }
@@ -134,22 +154,12 @@ function updateStats() {
     if (timeLeftEl) timeLeftEl.textContent = timeLeft;
 }
 
-if (canvas) {
-    canvas.addEventListener('click', (e) => {
-        if (!gameRunning) return;
-        
-        const rect = canvas.getBoundingClientRect();
-        const x = Math.floor((e.clientX - rect.left) / GRID_SIZE);
-        const y = Math.floor((e.clientY - rect.top) / GRID_SIZE);
-        
-        mowedCells.add(`${x},${y}`);
-        drawGame();
-        updateStats();
-    });
-}
-
 // Initialize game display
-drawGame();
+function initGameDisplay() {
+    if (canvas && ctx) {
+        drawGame();
+    }
+}
 
 // Lawn Care Quiz
 const quizQuestions = [
@@ -387,6 +397,20 @@ function submitQuiz() {
 }
 
 // Initialize quiz on page load
-if (document.getElementById('quizContainer')) {
-    renderQuiz();
+function initQuiz() {
+    const quizContainer = document.getElementById('quizContainer');
+    if (quizContainer) {
+        renderQuiz();
+    }
+}
+
+// Initialize everything when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        initCanvas();
+        initQuiz();
+    });
+} else {
+    initCanvas();
+    initQuiz();
 }
