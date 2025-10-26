@@ -67,7 +67,7 @@
                 <h1 class="hero-title" style="font-size: 2.5rem;">Join Our Growing Team</h1>
                 <p class="hero-subtitle">Build a rewarding career with Wellington's most innovative lawn care company. We're looking for passionate people who love the outdoors and excellent customer service.</p>
                 <div class="hero-buttons">
-                    <a href="#apply" class="btn btn-primary btn-large">
+                    <a href="#application-form" class="btn btn-primary btn-large">
                         <i class="fas fa-paper-plane"></i>
                         Apply Now
                     </a>
@@ -199,7 +199,7 @@
                         </div>
                     </div>
 
-                    <a href="#apply" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                    <a href="#application-form" class="btn btn-primary" style="width: 100%; justify-content: center;">
                         <i class="fas fa-paper-plane"></i>
                         Apply for This Position
                     </a>
@@ -223,7 +223,7 @@
                     
                     <p style="margin-bottom: 1.5rem; line-height: 1.6;">Perfect for someone who loves helping people and has excellent communication skills. Manage customer inquiries, bookings, and support our growing customer base.</p>
                     
-                    <a href="#apply" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                    <a href="#application-form" class="btn btn-outline" style="width: 100%; justify-content: center;">
                         <i class="fas fa-bell"></i>
                         Get Notified When Open
                     </a>
@@ -311,160 +311,28 @@
     <!-- Application Form -->
     <section id="apply" style="padding: 60px 0;">
         <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
+            <div style="max-width: 900px; margin: 0 auto;">
                 <div style="text-align: center; margin-bottom: 3rem;">
                     <h2 class="section-title">Apply Now</h2>
                     <p style="color: var(--medium-gray); font-size: 1.1rem;">
-                        Ready to join the Choppalawnz team? Upload your CV and cover letter below and we'll get back to you within 24 hours.
+                        Ready to join the Choppalawnz team? Complete the application form below and we'll get back to you within 24 hours.
                     </p>
                 </div>
 
-                <div style="background: white; padding: 3rem; border-radius: 1rem; box-shadow: var(--shadow-lg); border: 1px solid rgba(255, 107, 157, 0.1);">
-                    <form name="job-application" method="POST" action="thank-you.html" data-netlify="true" enctype="multipart/form-data" netlify-honeypot="bot-field">
-                        <!-- Hidden fields for Netlify -->
-                        <input type="hidden" name="form-name" value="job-application" />
-                        <p style="display: none;">
-                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                <div id="application-form" style="background: white; padding: 3rem; border-radius: 1rem; box-shadow: var(--shadow-lg); border: 1px solid rgba(255, 107, 157, 0.1);">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+                            <i class="fas fa-briefcase"></i> Job Application Form
+                        </h3>
+                        <p style="color: var(--medium-gray);">
+                            Please fill out all required fields marked with an asterisk (*)
                         </p>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
-                            <div class="form-group">
-                                <label for="firstName" class="form-label">
-                                    <i class="fas fa-user"></i> First Name *
-                                </label>
-                                <input type="text" 
-                                       id="firstName" 
-                                       name="firstName"
-                                       class="form-input" 
-                                       placeholder="Enter your first name"
-                                       required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="lastName" class="form-label">
-                                    <i class="fas fa-user"></i> Last Name *
-                                </label>
-                                <input type="text" 
-                                       id="lastName" 
-                                       name="lastName"
-                                       class="form-input" 
-                                       placeholder="Enter your last name"
-                                       required>
-                            </div>
-                        </div>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
-                            <div class="form-group">
-                                <label for="email" class="form-label">
-                                    <i class="fas fa-envelope"></i> Email Address *
-                                </label>
-                                <input type="email" 
-                                       id="email" 
-                                       name="email"
-                                       class="form-input" 
-                                       placeholder="your.email@example.com"
-                                       required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phone" class="form-label">
-                                    <i class="fas fa-phone"></i> Phone Number *
-                                </label>
-                                <input type="tel" 
-                                       id="phone" 
-                                       name="phone"
-                                       class="form-input" 
-                                       placeholder="027 123 4567"
-                                       required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="position" class="form-label">
-                                <i class="fas fa-briefcase"></i> Position Applying For *
-                            </label>
-                            <select id="position" name="position" class="form-select" required>
-                                <option value="">Select a position</option>
-                                <option value="casual-lawn-care-operator">Casual Lawn Care Operator</option>
-                                <option value="general-application">General Application</option>
-                                <option value="other">Other (please specify in cover letter)</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="availability" class="form-label">
-                                <i class="fas fa-calendar"></i> Availability
-                            </label>
-                            <textarea id="availability" 
-                                      name="availability"
-                                      class="form-textarea" 
-                                      placeholder="Tell us about your availability (days, times, start date, etc.)"
-                                      rows="3"></textarea>
-                        </div>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
-                            <div class="form-group">
-                                <label for="cv" class="form-label">
-                                    <i class="fas fa-file-upload"></i> Upload CV/Resume *
-                                </label>
-                                <input type="file" 
-                                       id="cv" 
-                                       name="cv"
-                                       class="form-input" 
-                                       accept=".pdf,.doc,.docx"
-                                       required
-                                       style="padding: 0.75rem;">
-                                <small style="color: var(--medium-gray); font-size: 0.85rem; margin-top: 0.25rem; display: block;">
-                                    PDF, DOC, or DOCX format (max 5MB)
-                                </small>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="coverLetter" class="form-label">
-                                    <i class="fas fa-file-upload"></i> Upload Cover Letter
-                                </label>
-                                <input type="file" 
-                                       id="coverLetter" 
-                                       name="coverLetter"
-                                       class="form-input" 
-                                       accept=".pdf,.doc,.docx"
-                                       style="padding: 0.75rem;">
-                                <small style="color: var(--medium-gray); font-size: 0.85rem; margin-top: 0.25rem; display: block;">
-                                    Optional - PDF, DOC, or DOCX format (max 5MB)
-                                </small>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message" class="form-label">
-                                <i class="fas fa-comment"></i> Additional Information
-                            </label>
-                            <textarea id="message" 
-                                      name="message"
-                                      class="form-textarea" 
-                                      placeholder="Tell us why you'd like to work with Choppalawnz, any relevant experience, or other information you'd like us to know..."
-                                      rows="4"></textarea>
-                        </div>
-
-                        <div class="form-checkbox">
-                            <input type="checkbox" id="consent" name="consent" required>
-                            <label for="consent" style="color: var(--dark-gray); line-height: 1.5;">
-                                I consent to Choppalawnz storing and processing my personal information for recruitment purposes. 
-                                <a href="terms.html" style="color: var(--primary-color);">Privacy policy</a>.
-                            </label>
-                        </div>
-
-                        <div style="text-align: center; margin-top: 2rem;">
-                            <button type="submit" class="btn btn-primary btn-large">
-                                <i class="fas fa-paper-plane"></i>
-                                Submit Application
-                            </button>
-                        </div>
-
-                        <div style="text-align: center; margin-top: 1rem; color: var(--medium-gray); font-size: 0.9rem;">
-                            <i class="fas fa-clock"></i> We typically respond within 24 hours
-                        </div>
-                    </form>
+                    </div>
+                    
+                    <!-- Google Form Embed -->
+                    <div style="display: flex; justify-content: center;">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQgr12IAiJ2hmaW1mSIpFFrceszp2eglywWIeeJXRw5sKA6A/viewform?embedded=true" width="640" height="896" frameborder="0" marginheight="0" marginwidth="0" style="max-width: 100%; border-radius: 0.5rem;">Loading…</iframe>
+                    </div>
                 </div>
 
                 <!-- What Happens Next -->
