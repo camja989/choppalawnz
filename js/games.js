@@ -21,9 +21,13 @@ if (canvas) {
     
     setCanvasSize();
     window.addEventListener('resize', setCanvasSize);
+    
+    // Update best score display
+    const bestScoreElement = document.getElementById('bestScore');
+    if (bestScoreElement) {
+        bestScoreElement.textContent = bestScore;
+    }
 }
-
-document.getElementById('bestScore').textContent = bestScore;
 
 const GRID_SIZE = 20; // Size of each mowable cell
 
@@ -100,7 +104,8 @@ function endGame() {
     if (score > bestScore) {
         bestScore = score;
         localStorage.setItem('bestMowerScore', bestScore);
-        document.getElementById('bestScore').textContent = bestScore;
+        const bestScoreEl = document.getElementById('bestScore');
+        if (bestScoreEl) bestScoreEl.textContent = bestScore;
         
         alert(`🎉 New High Score! You mowed ${score}% of the lawn!\n\nGreat job! At Choppalawnz, our professionals can mow your entire lawn in no time!`);
     } else {
@@ -123,8 +128,10 @@ function calculateScore() {
 }
 
 function updateStats() {
-    document.getElementById('percentMowed').textContent = calculateScore();
-    document.getElementById('timeLeft').textContent = timeLeft;
+    const percentMowedEl = document.getElementById('percentMowed');
+    const timeLeftEl = document.getElementById('timeLeft');
+    if (percentMowedEl) percentMowedEl.textContent = calculateScore();
+    if (timeLeftEl) timeLeftEl.textContent = timeLeft;
 }
 
 if (canvas) {
