@@ -75,6 +75,7 @@ function calculateLawnPrice() {
     const squareMeters = parseFloat(document.getElementById('squareMeters')?.value) || 0;
     const address = document.getElementById('address')?.value || '';
     const clippingsRemoval = document.getElementById('clippingsRemoval')?.checked || false;
+    const oneOffMow = document.getElementById('oneOffMow')?.checked || false;
     const firstMow = document.getElementById('firstMow')?.checked || false;
     
     if (squareMeters <= 0) {
@@ -101,8 +102,8 @@ function calculateLawnPrice() {
     
     // ONE-OFF MOW PREMIUM - Apply surcharge for one-off mows
     let oneOffSurcharge = 0;
-    if (firstMow) {
-        // One-off mows get 80-150% surcharge due to overgrown grass
+    if (oneOffMow) {
+        // One-off mows get 100% surcharge due to overgrown grass
         const surchargePercent = 1.0; // 100% surcharge for consistency
         oneOffSurcharge = mowingCost * surchargePercent;
         mowingCost += oneOffSurcharge;
@@ -123,10 +124,10 @@ function calculateLawnPrice() {
     // Clippings removal cost - TIERED PRICING
     let clippingsCost = 0;
     if (clippingsRemoval) {
-        if (firstMow) {
+        if (oneOffMow) {
             // One-off mows
             clippingsCost = 29.90;
-        } else if (squareMeters > 100) {
+        } else if (firstMow && squareMeters > 100) {
             // First mow on larger properties (ongoing customers)
             clippingsCost = 19.90;
         } else {
@@ -143,7 +144,7 @@ function calculateLawnPrice() {
     if (resultDiv) {
         resultDiv.innerHTML = `
             <h3>Price Estimate</h3>
-            ${firstMow ? `
+            ${oneOffMow ? `
             <div style="background: #ffebee; border: 2px solid #f44336; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
                 <h4 style="color: #d32f2f; margin-bottom: 0.5rem;">
                     <i class="fas fa-exclamation-triangle"></i> One-Off Mow Premium Pricing
@@ -171,7 +172,7 @@ function calculateLawnPrice() {
                 </div>
                 ${clippingsCost > 0 ? `
                 <div class="price-item">
-                    <span>Clippings removal ${firstMow ? '(one-off)' : squareMeters > 100 ? '(first mow, large)' : '(ongoing)'}</span>
+                    <span>Clippings removal ${oneOffMow ? '(one-off)' : (firstMow && squareMeters > 100) ? '(first mow, large)' : '(ongoing)'}</span>
                     <span>$${clippingsCost.toFixed(2)}</span>
                 </div>
                 ` : ''}
