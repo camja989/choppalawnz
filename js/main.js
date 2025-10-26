@@ -85,19 +85,17 @@ function calculateLawnPrice() {
 
     // NEW TIERED PRICING STRUCTURE
     const minimumCharge = 49.90; // Minimum charge for 0-20 sqm
+    const ratePerTwentySqm = 49.90; // $49.90 per 20 sqm
     let mowingCost;
     
     if (squareMeters <= 20) {
+        // Minimum charge for lawns 0-20 sqm
         mowingCost = minimumCharge;
-    } else if (squareMeters <= 40) {
-        mowingCost = minimumCharge * 2; // Double for 20-40 sqm
-    } else if (squareMeters <= 80) {
-        mowingCost = minimumCharge * 4; // 4x for 40-80 sqm
     } else {
-        // For lawns over 80 sqm, calculate proportionally
-        // 80 sqm = 4x minimum (199.60), so rate per sqm = 199.60/80 = $2.495/sqm
-        const rate = (minimumCharge * 4) / 80;
-        mowingCost = squareMeters * rate;
+        // Calculate based on $49.90 per 20 sqm blocks
+        // For example: 50 sqm = 2.5 blocks × $49.90 = $124.75
+        const blocks = squareMeters / 20;
+        mowingCost = blocks * ratePerTwentySqm;
     }
     
     // ONE-OFF MOW PREMIUM - Apply surcharge for one-off mows
