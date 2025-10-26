@@ -70,7 +70,7 @@ window.addEventListener('scroll', () => {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
-// Calculator functionality (for calculator.html) - UPDATED WITH PREMIUM PRICING
+// Calculator functionality (for calculator.html) - UPDATED PRICING STRUCTURE
 function calculateLawnPrice() {
     const squareMeters = parseFloat(document.getElementById('squareMeters')?.value) || 0;
     const address = document.getElementById('address')?.value || '';
@@ -82,38 +82,57 @@ function calculateLawnPrice() {
         return;
     }
 
-    // PREMIUM Wellington lawn mowing rates - SIGNIFICANTLY INCREASED
-    const baseRatePerSqm = 0.28; // $0.28 per square meter (3.5x increase)
-    const minimumCharge = 120; // Minimum $120 charge (increased from $45)
+    // NEW TIERED PRICING STRUCTURE
+    const minimumCharge = 49.90; // Minimum charge for 0-20 sqm
+    let mowingCost;
     
-    // Calculate base mowing cost
-    let mowingCost = Math.max(squareMeters * baseRatePerSqm, minimumCharge);
+    if (squareMeters <= 20) {
+        mowingCost = minimumCharge;
+    } else if (squareMeters <= 40) {
+        mowingCost = minimumCharge * 2; // Double for 20-40 sqm
+    } else if (squareMeters <= 80) {
+        mowingCost = minimumCharge * 4; // 4x for 40-80 sqm
+    } else {
+        // For lawns over 80 sqm, calculate proportionally
+        // 80 sqm = 4x minimum (199.60), so rate per sqm = 199.60/80 = $2.495/sqm
+        const rate = (minimumCharge * 4) / 80;
+        mowingCost = squareMeters * rate;
+    }
     
-    // ONE-OFF MOW PREMIUM - Apply massive surcharge for one-off mows
+    // ONE-OFF MOW PREMIUM - Apply surcharge for one-off mows
     let oneOffSurcharge = 0;
     if (firstMow) {
-        // One-off mows get 80-150% surcharge due to overgrown grass and no ongoing revenue
-        const surchargePercent = 0.8 + (Math.random() * 0.7); // Random between 80-150%
+        // One-off mows get 80-150% surcharge due to overgrown grass
+        const surchargePercent = 1.0; // 100% surcharge for consistency
         oneOffSurcharge = mowingCost * surchargePercent;
         mowingCost += oneOffSurcharge;
     }
     
-    // Calculate travel cost to Karori (INCREASED RATES)
-    let travelCost = 0;
+    // Calculate travel cost with $9.90 minimum
+    let travelCost = 9.90; // Minimum travel cost
     if (address.toLowerCase().includes('karori') || address.toLowerCase().includes('wellington')) {
-        // Increased IRD rate to $1.20 per km (2024)
-        const avgDistanceToKarori = 18; // Increased average distance
-        const returnTripDistance = avgDistanceToKarori * 2;
-        travelCost = returnTripDistance * 1.20;
-    } else if (address) {
-        // Increased travel cost for other Wellington suburbs
-        travelCost = 45; // Increased from $20
+        // IRD rate: $1.00 per km for return trips over 10km
+        const avgDistanceToKarori = 15; // Average distance to Karori
+        const returnTripDistance = avgDistanceToKarori * 2; // 30km return
+        if (returnTripDistance > 10) {
+            const chargeableKm = returnTripDistance - 10;
+            travelCost = 9.90 + (chargeableKm * 1.00);
+        }
     }
     
-    // Clippings removal cost - PREMIUM PRICING
+    // Clippings removal cost - TIERED PRICING
     let clippingsCost = 0;
     if (clippingsRemoval) {
-        clippingsCost = firstMow ? 65 : 35; // Significantly increased from $20/$10
+        if (firstMow) {
+            // One-off mows
+            clippingsCost = 29.90;
+        } else if (squareMeters > 100) {
+            // First mow on larger properties (ongoing customers)
+            clippingsCost = 19.90;
+        } else {
+            // Regular ongoing maintenance
+            clippingsCost = 9.90;
+        }
     }
     
     // Calculate totals
@@ -123,14 +142,14 @@ function calculateLawnPrice() {
     const resultDiv = document.getElementById('calculatorResult');
     if (resultDiv) {
         resultDiv.innerHTML = `
-            <h3>Premium Price Estimate</h3>
+            <h3>Price Estimate</h3>
             ${firstMow ? `
             <div style="background: #ffebee; border: 2px solid #f44336; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
                 <h4 style="color: #d32f2f; margin-bottom: 0.5rem;">
                     <i class="fas fa-exclamation-triangle"></i> One-Off Mow Premium Pricing
                 </h4>
                 <p style="color: #d32f2f; font-weight: 600; margin: 0;">
-                    One-off mows are priced at a premium ($250-$750+ range) due to overgrown grass requiring specialized equipment 
+                    One-off mows are priced at a premium ($249.90-$749.90+ range) due to overgrown grass requiring specialized equipment 
                     and significantly more time. Regular service customers receive much better value.
                 </p>
             </div>
@@ -142,29 +161,27 @@ function calculateLawnPrice() {
                 </div>
                 ${oneOffSurcharge > 0 ? `
                 <div class="price-item" style="color: #d32f2f;">
-                    <span>One-off mow premium surcharge</span>
+                    <span>One-off mow premium surcharge (100%)</span>
                     <span>+$${oneOffSurcharge.toFixed(2)}</span>
                 </div>
                 ` : ''}
-                ${travelCost > 0 ? `
                 <div class="price-item">
-                    <span>Travel cost (premium rate)</span>
+                    <span>Travel cost (min $9.90, $1/km over 10km return)</span>
                     <span>$${travelCost.toFixed(2)}</span>
                 </div>
-                ` : ''}
                 ${clippingsCost > 0 ? `
                 <div class="price-item">
-                    <span>Clippings removal (premium service)</span>
+                    <span>Clippings removal ${firstMow ? '(one-off)' : squareMeters > 100 ? '(first mow, large)' : '(ongoing)'}</span>
                     <span>$${clippingsCost.toFixed(2)}</span>
                 </div>
                 ` : ''}
                 <div class="price-item">
-                    <strong>Total Premium Service</strong>
+                    <strong>Total Service Cost</strong>
                     <strong>$${total.toFixed(2)}</strong>
                 </div>
             </div>
             <div style="margin-top: 1rem; padding: 1rem; background: #e8f5e8; border-radius: 0.5rem; font-size: 0.9rem; color: #2d5016;">
-                <strong>💡 Save significantly with ongoing service:</strong> Regular customers pay standard rates without premium surcharges! 
+                <strong>💡 Save with ongoing service:</strong> Regular customers pay standard rates without premium surcharges! 
                 <a href="contact.html#contact-form" style="color: #ff6b9d; font-weight: 600;">Get Quote</a>
             </div>
         `;
