@@ -806,17 +806,6 @@ body {
         padding: 0.5rem 1rem;
         display: block !important;
         list-style: none;
-        background: #f0f0f0;
-        margin: 5px 0;
-        border: 2px solid red;
-    }
-
-    /* Target the last two nav items specifically */
-    .nav-item:nth-last-child(1),
-    .nav-item:nth-last-child(2) {
-        background: yellow !important;
-        border: 3px solid blue !important;
-        min-height: 50px;
     }
 
     .nav-link {
