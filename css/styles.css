@@ -798,6 +798,22 @@ body {
         left: 0;
     }
 
+    .nav-item {
+        width: 100%;
+        padding: 0.5rem 1rem;
+    }
+
+    .contact-dropdown {
+        width: 100%;
+    }
+
+    .contact-dropdown button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
     .hamburger {
         display: flex;
     }
@@ -814,9 +830,12 @@ body {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    .contact-dropdown button {
-        font-size: 0.9rem;
-        padding: 0.6rem 1rem;
+    /* Ensure buttons are visible and properly styled on mobile */
+    .nav-menu .btn {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin: 0.5rem 0;
     }
 
     .contact-dropdown-content {
