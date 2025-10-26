@@ -6,6 +6,7 @@ if (hamburger && navOverlay) {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navOverlay.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
         // Prevent body scroll when menu is open
         document.body.style.overflow = navOverlay.classList.contains('active') ? 'hidden' : '';
     });
@@ -15,6 +16,7 @@ if (hamburger && navOverlay) {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
             document.body.style.overflow = '';
         });
     });
@@ -24,6 +26,7 @@ if (hamburger && navOverlay) {
         if (e.target === navOverlay) {
             hamburger.classList.remove('active');
             navOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
             document.body.style.overflow = '';
         }
     });
@@ -33,6 +36,7 @@ if (hamburger && navOverlay) {
         if (e.key === 'Escape' && navOverlay.classList.contains('active')) {
             hamburger.classList.remove('active');
             navOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
             document.body.style.overflow = '';
         }
     });

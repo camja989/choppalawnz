@@ -277,6 +277,12 @@ body {
     visibility: visible;
 }
 
+/* Hide mobile CTA bar when menu is open */
+.nav-overlay.active ~ .mobile-cta-bar,
+body.menu-open .mobile-cta-bar {
+    display: none !important;
+}
+
 .nav-menu-container {
     max-width: 800px;
     width: 100%;
