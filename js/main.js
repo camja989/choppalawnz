@@ -17,6 +17,27 @@ if (hamburger && navMenu) {
     });
 }
 
+// Contact Dropdown Mobile Toggle
+const contactDropdown = document.querySelector('.contact-dropdown');
+const contactDropdownBtn = contactDropdown?.querySelector('button');
+
+if (contactDropdownBtn) {
+    contactDropdownBtn.addEventListener('click', (e) => {
+        // On mobile, toggle the dropdown
+        if (window.innerWidth <= 768) {
+            e.stopPropagation();
+            contactDropdown.classList.toggle('mobile-open');
+        }
+    });
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    if (contactDropdown && !contactDropdown.contains(e.target)) {
+        contactDropdown.classList.remove('mobile-open');
+    }
+});
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
