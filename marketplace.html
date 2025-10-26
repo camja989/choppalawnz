@@ -17,42 +17,146 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="index.html">Choppalawnz</a>
+                <a href="index.html">
+                    <img src="img/updated logo.png" alt="Choppalawnz - Wellington Lawn Care" />
+                </a>
             </div>
-            <div class="nav-menu">
-                <div class="nav-links">
-                    <a href="index.html" class="nav-link">Home</a>
-                </div>
-                <div class="nav-links">
-                    <a href="services.html" class="nav-link">Services</a>
-                </div>
-                <div class="nav-links">
-                    <a href="prices.html" class="nav-link">Pricing</a>
-                </div>
-                <div class="nav-links">
-                    <a href="calculator.html" class="nav-link">Calculator</a>
-                </div>
-                <div class="nav-links">
-                    <a href="blog.html" class="nav-link">Blog</a>
-                </div>
-                <div class="nav-links">
-                    <a href="about.html" class="nav-link">About</a>
-                </div>
-                <div class="nav-links">
-                    <a href="community.html" class="nav-link">Community</a>
-                </div>
-                <div class="nav-links">
-                    <a href="marketplace.html" class="nav-link active">Marketplace</a>
-                </div>
-                <div class="nav-links">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </div>
+            
+            <!-- Desktop & Mobile Menu Button -->
+            <div class="menu-toggle">
+                <button class="hamburger" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
-            <div class="nav-cta">
-                <a href="#early-access" class="nav-link cta-button">Join Waitlist</a>
+        </div>
+        
+        <!-- Full Screen Menu Overlay -->
+        <div class="nav-overlay">
+            <div class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">
+                            <i class="fas fa-leaf"></i> Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="prices.html" class="nav-link">
+                            <i class="fas fa-tag"></i> Pricing
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="calculator.html" class="nav-link">
+                            <i class="fas fa-calculator"></i> Calculator
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">
+                            <i class="fas fa-blog"></i> Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="community.html" class="nav-link">
+                            <i class="fas fa-users"></i> Community
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="marketplace.html" class="nav-link">
+                            <i class="fas fa-store"></i> Marketplace
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="courses.html" class="nav-link">
+                            <i class="fas fa-graduation-cap"></i> Courses
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="publications.html" class="nav-link">
+                            <i class="fas fa-book"></i> Research
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="games.html" class="nav-link">
+                            <i class="fas fa-gamepad"></i> Games
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="franchise.html" class="nav-link">
+                            <i class="fas fa-handshake"></i> Franchise
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="careers.html" class="nav-link">
+                            <i class="fas fa-briefcase"></i> Careers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                    
+                    <!-- Contact Options -->
+                    <li class="nav-item nav-divider"></li>
+                    <li class="nav-item nav-section-title">Get In Touch</li>
+                    <li class="nav-item">
+                        <a href="tel:0273155560" class="nav-link nav-contact">
+                            <i class="fas fa-phone"></i> Call: 027 315 5560
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sms:0273155560" class="nav-link nav-contact">
+                            <i class="fas fa-sms"></i> Text: 027 315 5560
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://wa.me/640273155560" target="_blank" rel="noopener noreferrer" class="nav-link nav-contact">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="mailto:choppalawnz@gmail.com" class="nav-link nav-contact">
+                            <i class="fas fa-envelope"></i> Email Us
+                        </a>
+                    </li>
+                    
+                    <!-- CTA Button -->
+                    <li class="nav-item" style="margin-top: 2rem;">
+                        <a href="contact.html#contact-form" class="btn btn-primary btn-large" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-paper-plane"></i> Get Quote
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile CTA Bar -->
+    <div class="mobile-cta-bar">
+        <a href="tel:0273155560" class="mobile-cta-btn mobile-cta-call">
+            <i class="fas fa-phone"></i> Call
+        </a>
+        <a href="sms:0273155560" class="mobile-cta-btn mobile-cta-text">
+            <i class="fas fa-sms"></i> Text
+        </a>
+        <a href="https://wa.me/640273155560" class="mobile-cta-btn mobile-cta-whatsapp" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="contact.html#contact-form" class="mobile-cta-btn mobile-cta-quote">
+            <i class="fas fa-envelope"></i> Quote
+        </a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" style="background: linear-gradient(135deg, rgba(78, 205, 196, 0.9), rgba(68, 160, 141, 0.9)), url('img/marketplace-hero.jpg') center/cover; min-height: 70vh; position: relative; overflow: hidden;">
