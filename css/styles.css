@@ -466,20 +466,24 @@ body {
 
 /* Desktop CTA Section */
 .desktop-cta-section {
-    padding: 3rem 0;
-    background: linear-gradient(135deg, rgba(255, 107, 157, 0.05), rgba(78, 205, 196, 0.05));
-    border-top: 1px solid rgba(255, 107, 157, 0.1);
-    border-bottom: 1px solid rgba(255, 107, 157, 0.1);
+    position: sticky;
+    top: 70px;
+    z-index: 999;
+    padding: 1.5rem 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 107, 157, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .desktop-cta-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .desktop-cta-heading {
-    text-align: center;
-    margin-bottom: 2.5rem;
+    display: none;
 }
 
 .desktop-cta-heading h3 {
@@ -497,7 +501,7 @@ body {
 .desktop-cta-buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -507,9 +511,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    padding: 2rem 1.5rem;
-    border-radius: 1rem;
+    gap: 0.5rem;
+    padding: 1rem 1rem;
+    border-radius: 0.75rem;
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -518,24 +522,23 @@ body {
 }
 
 .desktop-cta-btn i {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 0;
 }
 
 .desktop-cta-btn .cta-label {
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 0.95rem;
+    font-weight: 600;
     color: white;
 }
 
 .desktop-cta-btn .cta-detail {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
+    display: none;
 }
 
 .desktop-cta-btn:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .desktop-cta-call {
