@@ -251,7 +251,8 @@ body {
     text-align: center;
 }
 
-.contact-dropdown:hover .contact-dropdown-content {
+.contact-dropdown:hover .contact-dropdown-content,
+.contact-dropdown.active .contact-dropdown-content {
     display: block;
     animation: fadeIn 0.2s ease;
 }
@@ -828,7 +829,8 @@ body {
         border-radius: var(--border-radius-md);
     }
 
-    .contact-dropdown.mobile-open .contact-dropdown-content {
+    .contact-dropdown.mobile-open .contact-dropdown-content,
+    .contact-dropdown.active .contact-dropdown-content {
         display: block;
     }
 

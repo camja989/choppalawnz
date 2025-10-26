@@ -17,34 +17,34 @@ if (hamburger && navMenu) {
     });
 }
 
-// Contact Dropdown Mobile Toggle
+// Contact Dropdown Toggle (Desktop and Mobile)
 const contactDropdown = document.querySelector('.contact-dropdown');
 const contactDropdownBtn = contactDropdown?.querySelector('button');
 const contactDropdownContent = contactDropdown?.querySelector('.contact-dropdown-content');
 
-if (contactDropdownBtn) {
+if (contactDropdownBtn && contactDropdown) {
+    // Toggle dropdown on button click
     contactDropdownBtn.addEventListener('click', (e) => {
-        // On mobile, toggle the dropdown
-        if (window.innerWidth <= 768) {
-            e.stopPropagation();
-            contactDropdown.classList.toggle('mobile-open');
+        e.preventDefault();
+        e.stopPropagation();
+        contactDropdown.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!contactDropdown.contains(e.target)) {
+            contactDropdown.classList.remove('active');
         }
     });
-}
 
-// Close dropdown when clicking outside, but not when clicking inside
-document.addEventListener('click', (e) => {
-    if (contactDropdown && !contactDropdown.contains(e.target)) {
-        contactDropdown.classList.remove('mobile-open');
+    // Keep dropdown open when clicking inside it (but allow links to work)
+    if (contactDropdownContent) {
+        contactDropdownContent.addEventListener('click', (e) => {
+            // Don't close dropdown when clicking on content
+            e.stopPropagation();
+            // But allow links to navigate
+        });
     }
-});
-
-// Prevent dropdown from closing when clicking on links (for both hover and mobile)
-if (contactDropdownContent) {
-    contactDropdownContent.addEventListener('click', (e) => {
-        // Allow the link to work normally
-        e.stopPropagation();
-    });
 }
 
 // Smooth scrolling for anchor links
