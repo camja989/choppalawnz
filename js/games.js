@@ -12,14 +12,22 @@ const GRID_SIZE = 20; // Size of each mowable cell
 // Initialize canvas when available
 function initCanvas() {
     canvas = document.getElementById('mowerGame');
-    if (!canvas) return false;
+    if (!canvas) {
+        console.error('Canvas element not found');
+        return false;
+    }
     
     ctx = canvas.getContext('2d');
+    if (!ctx) {
+        console.error('Could not get canvas context');
+        return false;
+    }
     
     const setCanvasSize = () => {
         const maxWidth = Math.min(600, window.innerWidth - 40);
         canvas.width = maxWidth;
         canvas.height = 400;
+        console.log('Canvas size set to:', canvas.width, 'x', canvas.height);
         if (!gameRunning) {
             drawGame();
         }
@@ -36,17 +44,22 @@ function initCanvas() {
     
     // Add click handler
     canvas.addEventListener('click', (e) => {
-        if (!gameRunning) return;
+        if (!gameRunning) {
+            console.log('Click ignored - game not running');
+            return;
+        }
         
         const rect = canvas.getBoundingClientRect();
         const x = Math.floor((e.clientX - rect.left) / GRID_SIZE);
         const y = Math.floor((e.clientY - rect.top) / GRID_SIZE);
         
+        console.log('Mowing cell:', x, y);
         mowedCells.add(`${x},${y}`);
         drawGame();
         updateStats();
     });
     
+    console.log('Canvas initialized successfully');
     return true;
 }
 
@@ -318,6 +331,29 @@ function renderQuiz() {
 }
 
 function submitQuiz() {
+    // Check if all questions are answered
+    const unansweredQuestions = [];
+    quizQuestions.forEach((q, index) => {
+        const selectedOption = document.querySelector(`.answer-option[data-question="${index}"].selected`);
+        if (!selectedOption) {
+            unansweredQuestions.push(index + 1);
+        }
+    });
+    
+    if (unansweredQuestions.length > 0) {
+        alert(`Please answer all questions before submitting!\n\nUnanswered questions: ${unansweredQuestions.join(', ')}`);
+        // Scroll to first unanswered question
+        const firstUnanswered = document.querySelector(`.question-card:nth-child(${unansweredQuestions[0]})`);
+        if (firstUnanswered) {
+            firstUnanswered.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            firstUnanswered.style.border = '3px solid #ff6b9d';
+            setTimeout(() => {
+                firstUnanswered.style.border = '';
+            }, 2000);
+        }
+        return;
+    }
+    
     let score = 0;
     const answers = [];
     
@@ -336,10 +372,6 @@ function submitQuiz() {
                 // Highlight correct answer
                 document.querySelector(`[data-question="${index}"][data-answer="${q.correct}"]`).classList.add('correct');
             }
-        } else {
-            answers.push(null);
-            // Highlight correct answer for unanswered questions
-            document.querySelector(`[data-question="${index}"][data-answer="${q.correct}"]`).classList.add('correct');
         }
     });
     
@@ -405,12 +437,21 @@ function initQuiz() {
 }
 
 // Initialize everything when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        initCanvas();
-        initQuiz();
-    });
-} else {
-    initCanvas();
+function initializeGames() {
+    console.log('Initializing games...');
+    const canvasInitialized = initCanvas();
+    console.log('Canvas initialized:', canvasInitialized);
     initQuiz();
+    console.log('Quiz initialized');
+    
+    // Draw initial game state
+    if (canvasInitialized) {
+        drawGame();
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeGames);
+} else {
+    initializeGames();
 }
