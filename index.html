@@ -142,9 +142,22 @@
     <link rel="icon" type="image/png" href="img/flavicon.png">
     <link rel="shortcut icon" href="img/flavicon.png">
     <link rel="apple-touch-icon" href="img/flavicon.png">
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Critical CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Defer non-critical fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Defer Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 </head>
 <body>
     <!-- Navigation -->
@@ -152,7 +165,10 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="index.html">
-                    <img src="img/updated logo.png" alt="Choppalawnz - Wellington Lawn Care" />
+                    <img src="img/updated logo.png" 
+                         alt="Choppalawnz - Wellington Lawn Care"
+                         width="140"
+                         height="26" />
                 </a>
             </div>
             
@@ -299,9 +315,14 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="img/IMG_5261.jpeg" 
-                     alt="Professional lawn mowing service in Wellington - Choppalawnz"
-                     loading="lazy">
+                <picture>
+                    <source srcset="img/IMG_5261.webp" type="image/webp">
+                    <img src="img/IMG_5261.jpeg" 
+                         alt="Professional lawn mowing service in Wellington - Choppalawnz"
+                         width="364"
+                         height="485"
+                         fetchpriority="high">
+                </picture>
             </div>
         </div>
     </section>
@@ -389,6 +410,9 @@
                         <img class="builders-crack-badge-large"
                              src="https://builderscrack.co.nz/tradie-badge/4yiimsf0"
                              alt="Choppalawnz verified on BuildersCrack - Wellington's trusted lawn care service"
+                             width="120"
+                             height="41"
+                             loading="lazy"
                         />
                     </a>
                     <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
@@ -427,9 +451,15 @@
         <div class="container">
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <div class="profile-image-container">
-                    <img src="img/IMG_1650.jpeg" 
-                         alt="Jack Campbell - CEO of Choppalawnz"
-                         class="profile-image">
+                    <picture>
+                        <source srcset="img/IMG_1650.webp" type="image/webp">
+                        <img src="img/IMG_1650.jpeg" 
+                             alt="Jack Campbell - CEO of Choppalawnz"
+                             class="profile-image"
+                             width="150"
+                             height="150"
+                             loading="lazy">
+                    </picture>
                 </div>
                 <h2 style="color: var(--primary-color); margin-bottom: 1rem;">A Personal Message</h2>
                 <blockquote style="font-size: 1.2rem; line-height: 1.6; color: var(--medium-gray); font-style: italic; margin-bottom: 1rem; border-left: 4px solid var(--primary-color); padding-left: 1.5rem; text-align: left;">
@@ -486,6 +516,8 @@
                 <div class="gallery-item">
                     <img src="img/IMG_4941.jpeg" 
                          alt="Before and after lawn mowing service Wellington"
+                         width="400"
+                         height="300"
                          loading="lazy">
                     <div class="gallery-overlay">
                         <h4>Precision Mowing</h4>
@@ -495,6 +527,8 @@
                 <div class="gallery-item">
                     <img src="img/IMG_5133.jpeg" 
                          alt="Professional lawn care equipment Wellington"
+                         width="400"
+                         height="300"
                          loading="lazy">
                     <div class="gallery-overlay">
                         <h4>Professional Equipment</h4>
@@ -641,6 +675,9 @@
                             <img style="max-width: 140px; height: auto; border-radius: 6px;"
                                  src="https://builderscrack.co.nz/tradie-badge/4yiimsf0"
                                  alt="Verified on BuildersCrack"
+                                 width="140"
+                                 height="48"
+                                 loading="lazy"
                             />
                         </a>
                     </div>
@@ -670,7 +707,11 @@
                     </div>
                     <div style="margin: 1rem 0;">
                         <a href="#" id="shielded-logo">
-                            <img alt="shielded" src="https://shielded.co.nz/img/custom-logo.png" height="60" width="60">
+                            <img alt="shielded" 
+                                 src="https://shielded.co.nz/img/custom-logo.png" 
+                                 height="60" 
+                                 width="60"
+                                 loading="lazy">
                         </a>
                     </div>
                     <div class="social-links">
