@@ -28,11 +28,21 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[redirects]]
-  from = "/quote"
-  to = "/calculator.html"
+  from = "/contact"
+  to = "/contact.html"
   status = 301
 
 [[redirects]]
-  from = "/contact"
-  to = "/contact.html"
+  from = "/services"
+  to = "/services.html"
+  status = 301
+
+[[redirects]]
+  from = "/prices"
+  to = "/prices.html"
+  status = 301
+
+[[redirects]]
+  from = "/pricing"
+  to = "/prices.html"
   status = 301
