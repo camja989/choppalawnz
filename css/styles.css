@@ -66,6 +66,7 @@ ul, ol { padding-left: 1.5rem; }
   background: var(--white);
   border-bottom: 1px solid var(--border);
   height: var(--nav-h);
+  overflow: hidden;
 }
 
 .nav__inner {
@@ -76,10 +77,11 @@ ul, ol { padding-left: 1.5rem; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
-.nav__logo { display: flex; align-items: center; text-decoration: none; }
-.nav__logo img { height: 28px; width: auto; }
+.nav__logo { display: flex; align-items: center; text-decoration: none; line-height: 1; flex-shrink: 0; }
+.nav__logo img { height: 32px; width: auto; display: block; margin: 0; padding: 0; }
 
 .nav__logo-text {
   font-size: 1.125rem;
