@@ -43,7 +43,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--black);
-  background: var(--white);
+  background: var(--bg-subtle);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -67,6 +67,7 @@ ul, ol { padding-left: 1.5rem; }
   border-bottom: 3px solid var(--black);
   height: var(--nav-h);
   overflow: hidden;
+  /* Nav stays white against the grey page background */
 }
 
 .nav__inner {
@@ -222,18 +223,20 @@ h4 { font-size: 1.25rem; }
 }
 
 .hero__title {
-  font-size: clamp(3.5rem, 10vw, 8rem);
-  letter-spacing: -0.05em;
-  line-height: 0.9;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
   font-weight: 900;
   margin-bottom: 1.5rem;
 }
 
 .hero__tagline {
-  font-size: 1.125rem;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
   color: var(--dark);
   margin-bottom: 2.5rem;
   font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
 .hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: center; }
