@@ -49,11 +49,24 @@
     <div class="container">
       <h1 class="hero__title"><strong>Professional lawn care</strong></h1>
       <p class="hero__tagline">Wellington residential sections</p>
+      <div style="display:inline-flex;align-items:center;gap:.625rem;border:2px solid #000;padding:.5rem 1rem;margin-bottom:1.75rem;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;">
+        <span style="width:8px;height:8px;border-radius:50%;background:#FF5500;flex-shrink:0;"></span>
+        Next available: <span id="next-slot"></span>
+      </div>
       <div class="hero__actions">
         <a href="services.html" class="btn--pill-outline">Learn more</a>
         <a href="contact.html" class="btn--pill-solid">Book lawn mow</a>
       </div>
       <img src="img/landing_6.webp" alt="Lawn mowing service" class="hero__img" width="500" height="352" fetchpriority="high">
+      <script>
+        (function(){
+          var d=new Date();
+          d.setDate(d.getDate()+1);
+          var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+          var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+          document.getElementById('next-slot').textContent=days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()];
+        })();
+      </script>
     </div>
   </section>
 
