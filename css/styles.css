@@ -71,7 +71,8 @@ ul, ol { padding-left: 1.5rem; }
 }
 
 .nav__inner {
-  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
   padding: 0 1.5rem;
   height: 100%;
   display: flex;
@@ -119,7 +120,7 @@ ul, ol { padding-left: 1.5rem; }
   color: var(--white) !important;
   background: var(--black);
   padding: 0.625rem 1.25rem;
-  border-radius: 0;
+  border-radius: 9999px;
   text-decoration: none !important;
   transition: background 0.15s;
 }
@@ -211,7 +212,7 @@ h4 { font-size: 1.25rem; }
 }
 
 /* --- Hero --- */
-.hero { padding: 10rem 0 7rem; text-align: center; }
+.hero { padding: 3rem 0 5rem; text-align: center; }
 
 .hero__label {
   font-size: 0.6875rem;
@@ -240,6 +241,15 @@ h4 { font-size: 1.25rem; }
 }
 
 .hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: center; }
+
+.hero__img {
+  width: 100%;
+  max-width: 320px;
+  margin: 3rem auto 0;
+  display: block;
+  object-fit: cover;
+  border-radius: 1rem;
+}
 
 /* Pill buttons (hero) */
 .btn--pill-solid {
